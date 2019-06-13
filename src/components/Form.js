@@ -59,8 +59,6 @@ class Form extends React.Component {
             onChange: {}
         }];
 
-
-
         return (
 
             <div style={{visibility: this.props.visibleForm}}>
@@ -72,6 +70,7 @@ class Form extends React.Component {
                         valueInput={element.valueInput}
                         key={index}
                     />)}
+
                 <Button
                     hadleClick={this.pushTask}
                     nameBtn='Add'
