@@ -32,6 +32,7 @@ class Form extends React.Component {
     }
 
     giveChange = (value, states) => (event) => {
+        this.setState({});
         console.log(this.state[states] + " /// " + value + " *** " + event.target.value);
     }
 
