@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/Header";
+import Body from "./components/Body";
+import Form from "./components/Form";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    state = {
+
+        titleTask: '',
+        descriptionTask: '',
+        importanceTask: '',
+        dateDeadline: new Date(),
+        dateCompleted: new Date(),
+        visibleForm: 'hidden'
+    };
+
+    addTask = () => {
+
+    }
+
+    openMenuClick = () => {
+        this.setState({visibleForm: (this.state.visibleForm === 'hidden') ? 'visible' : 'hidden'});
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <Form
+                    addTask={this.addTask}
+                    visibleForm={this.state.visibleForm}
+                />
+                <Header/>
+                <Body
+                    handleClick={this.openMenuClick}
+                />
+            </div>
+        );
+    }
 }
 
 export default App;
