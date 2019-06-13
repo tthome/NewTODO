@@ -31,8 +31,8 @@ class Form extends React.Component {
          this.props.addTask(this.state.todoItem);
     }
 
-    giveChange = (value) => (event) => {
-        console.log(this.state.titleTask + " /// " + value + " *** " + event.target.value);
+    giveChange = (value, states) => (event) => {
+        console.log(this.state[states] + " /// " + value + " *** " + event.target.value);
     }
 
     render() {
@@ -72,11 +72,6 @@ class Form extends React.Component {
                         valueInput={element.valueInput}
                         key={index}
                     />)}
-
-                    <Input
-                        pushChange = {this.giveChange}
-                        type
-                    />
                 <Button
                     hadleClick={this.pushTask}
                     nameBtn='Add'

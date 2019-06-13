@@ -7,12 +7,13 @@ class Input extends React.Component {
         nameInput: this.props.nameInput
     }
 
-
-
+    getChange = (event) => {
+        this.props.pushChange(event.target.value, this.state.nameInput);
+    }
 
     render() {
         return (
-            <input onChange={(event) => {this.props.pushChange(event.target.value, this.state.nameInput)}}
+            <input onChange={this.getChange}
                    type={this.props.typeInput}
                    value={this.props.valueInput}>
             </input>
