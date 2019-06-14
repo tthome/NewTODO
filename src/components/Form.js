@@ -5,7 +5,7 @@ import Input from "./Input";
 class Form extends React.Component {
 
     state = {
-        importance: this.props.importance,
+        importance: this.props.importance,// зачем?
         titleTask: '',
         descriptionTask: '',
         importanceTask: '',
@@ -65,7 +65,7 @@ class Form extends React.Component {
             <div style={{visibility: this.props.visibleForm}}>
                 {list.map((element, index) =>
                     <Input
-                        pushChange = {this.giveChange}
+                        pushChange = {this.giveChange} // это фэил, ты не передаешь туда ничего и не вызываешь, вот и не работает,
                         nameInput={element.nameInput}
                         typeInput={element.typeInput}
                         valueInput={element.valueInput}
